@@ -1,11 +1,5 @@
 describe('it is a TEST', () => {
-    it('임수민 만세', ()=>{
-
-    });
-    it('임수민 만세2', ()=>{
-
-    });
-    it('임수민 만세3', ()=>{
-
+    it("This is a TEST", () => {
+        expect(1).toBe(1);
     });
 });
