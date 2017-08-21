@@ -23,5 +23,19 @@ describe("주식 투자는 ", () => {
 
     it("비용이 수반된다", () => {
         expect(investment.cost).toEqual(2000);
-    })
+    });
+
+    describe("주가가 상승하면", () => {
+        beforeEach(() => {
+            stock.sharePrice = 40;
+        });
+
+        it("투자 수익률은 양(+)의 값을 가진다", () => {
+            expect(investment.roi()).toEqual(1);
+        });
+
+        it("우량 투자다", () => {
+            expect(investment).toBeAGoodInvestment();
+        })
+    });
 });
