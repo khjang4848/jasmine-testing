@@ -19,6 +19,7 @@
   "devDependencies": {
     "chai": "^4.1.1",
     "jasmine-core": "^2.7.0",
+    "jasmine-jquery": "^2.1.1",
     "karma": "^1.7.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.0",
