@@ -1,24 +1,26 @@
 // Karma configuration
-// Generated on Thu Aug 03 2017 18:14:34 GMT+0900 (Korea Standard Time)
-
 module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: "C:\\MyWork\\GitHub\\jasmine-testing",
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine-jquery', 'jasmine', 'jasmine-matchers'],
-
+    frameworks: ['jasmine-jquery', 'jasmine'],
 
     // list of files / patterns to load in the browser
     files: [
-        "./lib/jquery.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js",
+        {
+            pattern: './test/fixtures/*.html',
+            watched: true,
+            included: false,
+            served: true
+        },
         "./src/*.js",
         "./test/*.js"
     ],
-
 
     // list of files to exclude
     exclude: [
@@ -30,10 +32,6 @@ module.exports = function(config) {
     preprocessors: {
     },
 
-
-    // test results reporter to use
-    // possible values: 'dots', 'progress'
-    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['progress'],
 
 
@@ -53,13 +51,17 @@ module.exports = function(config) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
-
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['Chrome'],
 
+    plugins: [
+        'karma-jasmine-jquery',
+        'karma-jasmine',
+        'karma-chrome-launcher'
+    ],
 
-    // Continuous Integration mode
+      // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false,
 
